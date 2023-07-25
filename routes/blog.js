@@ -68,4 +68,12 @@ router.get('/posts/:id', async (req, res) => {
 
 });
 
+router.get('/posts/:id/edit', async (req, res)=> {
+  const postId = req.params.id;
+  const post = await db
+    .getDb()
+    .collection("posts")
+    .findOne({ _id: new ObjectId(postId) }, { title: 1, summary: 1, body: 1 });
+})
+
 module.exports = router;
