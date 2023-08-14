@@ -5,7 +5,7 @@ const MongoClient = mongodb.MongoClient;
 let database;
 
 async function connect() {
-    const clinet = await MongoClient.connect('mongodb://localhost:27017');
+    const clinet = await MongoClient.connect('mongodb://127.0.0.1:27017');
     database = clinet.db('blog');
 }
 
